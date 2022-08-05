@@ -1,0 +1,135 @@
+:root{
+    --main-bg-theme1: hsl(222, 26%, 31%);
+    --keypad-bg-theme1: hsl(223, 31%, 20%);
+    --screen-bg: hsl(224, 36%, 15%);
+
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: rgb(64, 78, 114);
+    --red-key-bg: hsl(6, 63%, 50%);
+    --red-key-shadow:hsl(6, 70%, 34%);
+    --light-gray-key-bg:hsl(30, 25%, 89%);
+    --light-gray-key-shadow:hsl(28, 16%, 65%);
+
+    --dark-gray-text: hsl(221, 14%, 31%);
+    --white: #ffffff;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 32px;
+    font-family: 'League Spartan', sans-serif;
+}
+
+body{
+    margin:0;
+}
+
+main{
+    height: calc(100vh - 374.88px);
+    width:100%;
+}
+
+/* TYPOGRAPHY */
+h1{
+    margin:0;
+}
+
+.screen{
+    font-size: 1rem;
+    color:var(--white);
+}
+
+.key{
+    font-size: .6rem;
+}
+
+/* LAYOUT */
+
+.container{
+    width: 100%;
+    padding:.5em;
+}
+
+.container.theme1{
+    background-color: var(--main-bg-theme1);
+}
+
+.screen{
+    width:100%;
+    height: 90px;
+    margin-bottom: 20px;
+    padding:.5em;
+    border-radius: 10px;
+    background-color: var(--screen-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+.keyboard-container.theme1{
+    background-color: var(--keypad-bg-theme1);
+}
+
+.keyboard-container{
+    height:100%;
+    padding:.5em;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 15px;
+}
+
+
+
+.key{
+    position:relative;
+    top:0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray-key-bg);
+    box-shadow: 1px 5px 0px 0px var(--light-gray-key-shadow);
+}
+
+#del, #reset{
+    color: var(--white);
+    background-color: var(--key-bg);
+    box-shadow: 1px 5px 0px 0px var(--key-shadow);
+}
+
+#reset{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+#equal{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    background-color: var(--red-key-bg);
+    box-shadow: 1px 5px 0px 0px var(--red-key-shadow);
+}
+
+.key:active{
+    top: 5px;
+    box-shadow: none !important;
+}
+
+
+
+
